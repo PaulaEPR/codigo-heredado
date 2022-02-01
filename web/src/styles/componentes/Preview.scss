@@ -1,0 +1,190 @@
+@import "../core/variables";
+
+.preview-main {
+  @include tablet {
+    background: linear-gradient(#f5f5f5, #ffffff);
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    padding: 0 40px 0;
+  }
+}
+.preview {
+  background: linear-gradient(#bfcdd0, #dde9ed);
+  height: 457px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    border-radius: 6px;
+    padding-bottom: 267px;
+    width: 329px;
+    height: 826px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  @include desktop {
+    width: 585px;
+  }
+
+  &__button {
+    cursor: pointer;
+    display: flex;
+    width: 75px;
+    height: 30px;
+    background-color: rgba($color: #00000000, $alpha: 0);
+    border: solid 1px white;
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #54585a;
+    font-family: $font-main;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 12px;
+    transform: translateX(-80px);
+
+    @media (min-width: 768px) {
+      margin-top: 180px;
+    }
+
+    .far {
+      padding: 5px 8px 5px 10px;
+      color: #54585a;
+    }
+  }
+  &__card {
+    width: 240px;
+    height: 329px;
+    margin-top: 20px;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+
+    &--name {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      padding-top: 21px;
+      height: 75px;
+
+      .name {
+        height: 20px;
+        width: 206px;
+        display: inline;
+        color: $dark-green-blue;
+        font-size: 18px;
+        font-family: $font-title-preview;
+        font-weight: bold;
+        padding: 0px;
+        // border-left: 5px solid $dirty-blue;
+        padding-left: 15px;
+        
+      }
+      .profession {
+        color: $gunmetal;
+        font-family: $font-title-preview;
+        font-size: 16px;
+        padding: 4px 0px;
+        height: 20px;
+        width: 168px;
+        // border-left: 5px solid $dirty-blue
+        padding-left: 15px;
+      }
+    }
+    &--img {
+      background-image: url("../../images/Vilma.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 240px;
+      height: 200px;
+    }
+    &--icons {
+      background-color: white;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+    }
+
+    .card-icons {
+      border: #a2deaf 2px solid;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px;
+
+      & i {
+        color: $dark-green-blue;
+      }
+    }
+  }
+}
+
+.line-palette {
+  position: absolute;
+  margin: 0px 15px 10px 0px;
+  width: 5px;
+  height: 45px;
+  background-color: $dirty-blue;
+}
+
+
+
+// Segunda paleta
+.preview__card--name .color2 {
+  color: #bd1010;
+}
+
+.preview__card--name .color2-dark {
+  color: #420101;
+}
+
+.preview__card--name .background-color2 {
+  background-color: #bd1010;
+}
+
+.preview__card--name .color2-light {
+  color: #e95626;
+}
+
+.preview__card .card-icons .color2-icon {
+  color: #420101;
+}
+
+.preview__card .color2-icon-border {
+  border: #e95626 2px solid;
+}
+
+// Tercera paleta
+.preview__card .card-icons .color3-icon {
+  color: #3e5b65;
+}
+
+.preview__card .color3-icon-border {
+  border: #a0c0cf 2px solid;
+}
+
+.preview__card--name .color3 {
+  color: #a0c0cf;
+}
+
+.preview__card--name .color3-dark {
+  color: #3e5b65;
+}
+
+.preview__card--name .color3-yellow {
+  color: #eab052;
+}
+
+.preview__card--name .background-color3 {
+  background-color: #eab052;
+}

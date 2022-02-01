@@ -1,0 +1,105 @@
+.main {
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 50vh;
+  @include tablet {
+    height: 60vh;
+  }
+  &__information {
+    margin: 35px 35px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: 768px) {
+      margin: 35px 250px;
+    }
+    &Title {
+      font-family: $font-titles;
+      color: $dull-orange;
+      font-size: 19.2px;
+      font-weight: bold;
+      @include tablet {
+        font-size: 24px;
+      }
+    }
+    &Subtitle {
+      color: $dark-green-blue;
+      font-size: 12.8px;
+      text-align: center;
+      @include tablet {
+        font-size: 16px;
+        width: 300px;
+      }
+    }
+  }
+  // bloque iconos
+  &__icons {
+    height: 74px;
+    width: 268px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 1.6px rgba(225, 115, 52, 0.21);
+    border-radius: 4px;
+    color: $gunmetal;
+    font-size: 12.8px;
+    padding: 15px 20px 10px 20px;
+    @include tablet {
+      height: 86px;
+      width: 325px;
+      font-size: 16px;
+    }
+    // cada icono + subtitulo
+    &Group {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    // icono
+    &Item {
+      color: $dull-orange;
+      font-size: 22.4px;
+      @include tablet {
+        font-size: 28px;
+      }
+    }
+  }
+  // div botón comenzar
+  &__button {
+    margin: 38px 0 30px;
+    background-color: $dirty-blue;
+    height: 42px;
+    width: 129px;
+    border-radius: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s linear;
+    @include tablet {
+      align-self: flex-end;
+      &Container {
+        flex-grow: 1.5;
+        display: flex;
+      }
+    }
+    // indicamos en hover que se puede pulsar y definimos transición
+    &:hover {
+      cursor: pointer;
+      background-color: #48a4b3;
+      transform: scale(1.05);
+    }
+    // texto del botón
+    &Text {
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: $font-main;
+      font-size: 16px;
+      padding: 15px;
+    }
+  }
+}
