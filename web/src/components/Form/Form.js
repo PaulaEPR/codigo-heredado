@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../../styles/componentes/Form.scss';
 import InputString from './InputString';
 import InputFile from './InputFile';
+import ShareButton from './ShareButton';
 
 const Form = (props) => {
   //COLAPSABLES
@@ -188,26 +189,7 @@ const Form = (props) => {
           <h2 className="form__share--title">Comparte</h2>
           <i className="fas fa-chevron-up js-arrow js-arrow-down"></i>
         </div>
-        <div className="form__share--button form-container-js">
-          <button
-            type="submit"
-            href="#"
-            id="button-card"
-            className="unabled share-button"
-            disabled
-          >
-            <i className="far fa-address-card"></i>
-            <span>Crear tarjeta</span>
-          </button>
-        </div>
-        <div className="form__share--created hidden" id="share-card">
-          <h4>La tarjeta ha sido creada:</h4>
-          <a href="#" className="card-link" target="_blank"></a>
-          <a href="#" className="twitter" target="_blank">
-            <i className="fab fa-twitter"></i>
-            Compartir en twitter
-          </a>
-        </div>
+        <ShareButton dataAPI={props.dataAPI}/>
       </fieldset>
     </form>
   );

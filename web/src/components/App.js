@@ -1,21 +1,21 @@
-import "../styles/App.scss";
+import '../styles/App.scss';
 
-import { useState } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Form from "./Form/Form";
-import Preview from "./Preview/Preview";
-
+import { useEffect, useState } from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import Form from './Form/Form';
+import Preview from './Preview/Preview';
+import callToApi from '../services/api';
 
 function App() {
   const [data, setData] = useState({
-    name: "",
-    job: "",
-    email: "",
-    phone: "",
-    github: "",
-    linkedin: "",
-    palette: "1",
+    name: '',
+    job: '',
+    email: '',
+    phone: '',
+    github: '',
+    linkedin: '',
+    palette: '1',
   });
 
   //INPUT FILE
@@ -27,15 +27,24 @@ function App() {
   //BUTON RESET
   const resetBtn = () => {
     setData({
-      name: "",
-      job: "",
-      email: "",
-      phone: "",
-      github: "",
-      linkedin: "",
-      palette: "1",
+      name: '',
+      job: '',
+      email: '',
+      phone: '',
+      github: '',
+      linkedin: '',
+      palette: '1',
     });
   };
+
+  const [dataAPI, setDataAPI] = useState({});
+
+  useEffect(() => {
+    callToApi().then((response) => {
+      setDataAPI(response);
+      console.log("Hola")
+    });
+  }, []);
 
   //PALETAS
 
@@ -70,8 +79,14 @@ function App() {
     <div>
       <Header />
       <main className="preview-main">
-        <Preview data={data} resetBtn={resetBtn} avatar={avatar}/>
-        <Form data={data} handleInput={handleInput} avatar={avatar} updateAvatar={updateAvatar}/>
+        <Preview data={data} resetBtn={resetBtn} avatar={avatar} />
+        <Form
+          data={data}
+          handleInput={handleInput}
+          avatar={avatar}
+          updateAvatar={updateAvatar}
+          dataAPI={dataAPI}
+        />
       </main>
       <Footer />
     </div>
