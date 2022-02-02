@@ -18,6 +18,8 @@ function App() {
     palette: '1',
   });
 
+
+
   //INPUT FILE
   const [avatar, setAvatar] = useState('');
   const updateAvatar = (avatar) => {
@@ -37,14 +39,15 @@ function App() {
     });
   };
 
-  const [dataAPI, setDataAPI] = useState({});
+  /* FETCH */
+/*   const [dataAPI, setDataAPI] = useState({});
 
   useEffect(() => {
     callToApi().then((response) => {
       setDataAPI(response);
       console.log("Hola")
     });
-  }, []);
+  }, []); */
 
   //PALETAS
 
@@ -85,7 +88,7 @@ function App() {
           handleInput={handleInput}
           avatar={avatar}
           updateAvatar={updateAvatar}
-          dataAPI={dataAPI}
+          //dataAPI={dataAPI}
         />
       </main>
       <Footer />

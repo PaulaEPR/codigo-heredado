@@ -3,6 +3,7 @@ import '../../styles/componentes/Form.scss';
 import InputString from './InputString';
 import InputFile from './InputFile';
 import ShareButton from './ShareButton';
+import Palette from './Palette';
 
 const Form = (props) => {
   //COLAPSABLES
@@ -56,55 +57,25 @@ const Form = (props) => {
             Colores
           </label>
           <ul className="form__design--list">
-            <li className="list__palette first__color">
-              <input
-                type="radio"
-                id="palette"
-                className="list__radio js-input"
-                name="palette"
-                data-id="1"
-                value="1"
-                onChange={props.handleInput}
-                checked={props.data.palette === '1'}
-                //onClick={handleFirstPalette}
-              />
-              <div className="colorOne"></div>
-              <div className="colorTwo"></div>
-              <div className="colorThree"></div>
-            </li>
-
-            <li className="list__palette second__color">
-              <input
-                type="radio"
-                id="palette"
-                className="list__radio js-input"
-                name="palette"
-                data-id="2"
-                value="2"
-                onChange={props.handleInput}
-                checked={props.data.palette === '2'}
-                //onClick={handleSecondPalette}
-              />
-              <div className="colorOne"></div>
-              <div className="colorTwo"></div>
-              <div className="colorThree"></div>
-            </li>
-
-            <li className="list__palette third__color">
-              <input
-                type="radio"
-                id="palette"
-                className="list__radio js-input"
-                name="palette"
-                data-id="3"
-                value="3"
-                onChange={props.handleInput}
-                checked={props.data.palette === '3'}
-              />
-              <div className="colorOne"></div>
-              <div className="colorTwo"></div>
-              <div className="colorThree"></div>
-            </li>
+            <Palette
+              handleInput={props.handleInput}
+              data={props.data}
+              number={'1'}
+              className={'first__color'}
+              //checked={props.checked}
+            />
+            <Palette
+              handleInput={props.handleInput}
+              data={props.data}
+              number={'2'}
+              className={'second__color'}
+            />
+            <Palette
+              handleInput={props.handleInput}
+              data={props.data}
+              number={'3'}
+              className={'third__color'}
+            />
           </ul>
         </div>
       </fieldset>
@@ -138,8 +109,8 @@ const Form = (props) => {
             required={true}
           />
 
-          <InputFile avatar={props.avatar} updateAvatar={props.updateAvatar}/>
-          
+          <InputFile avatar={props.avatar} updateAvatar={props.updateAvatar} />
+
           <InputString
             handleInput={props.handleInput}
             value={props.data.email}
@@ -189,7 +160,7 @@ const Form = (props) => {
           <h2 className="form__share--title">Comparte</h2>
           <i className="fas fa-chevron-up js-arrow js-arrow-down"></i>
         </div>
-        <ShareButton dataAPI={props.dataAPI}/>
+        {/* <ShareButton dataAPI={props.dataAPI}/> */}
       </fieldset>
     </form>
   );
