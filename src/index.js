@@ -9,14 +9,14 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-// Arrancamos el servidor en el puerto 3000
+// Arrancamos el servidor en el puerto 4000
 const serverPort = 4000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
 // Escribimos los endpoints que queramos
-server.get("/card", (req, res) => {
+server.post("/card", (req, res) => {
   const responseSuccess = {
     "sucess": true,
     "cardURL": "http://localhost:4000/card/"
