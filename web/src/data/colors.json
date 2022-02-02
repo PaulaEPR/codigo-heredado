@@ -1,19 +1,21 @@
-const [colors, setColors] = useState({
-  line: "",
-  name: "",
-  job: "",
-  circle: "",
-  icon: "",
-});
+
 
 [
+  {
+    "id": 1,
+    "line": "",
+    "name": "",
+    "job": "",
+    "circle": "",
+    "icon": ""
+  },
   {
     "id": 2,
     "line": "background-color2",
     "name": "color2-dark",
-    "job": "color2-light",
+    "job": "color2",
     "circle": "color2-icon-border",
-    "icon": "color2-icon",
+    "icon": "color2-icon"
   },
   {
     "id": 3,
@@ -21,6 +23,6 @@ const [colors, setColors] = useState({
     "name": "color3-dark",
     "job": "color3",
     "circle": "color3-icon-border",
-    "icon": "color3-icon",
+    "icon": "color3-icon"
   }
 ]

@@ -1,6 +1,7 @@
 import '../../styles/componentes/Preview.scss';
-import Icon from './Icon';
+import Icon from './IconPreview';
 import ImagePreview from './ImagePreview';
+import TitlePreview from './TitlePreview';
 
 const Preview = (props) => {
   return (
@@ -13,21 +14,18 @@ const Preview = (props) => {
       </button>
       <div className="preview__background">
         <div className="preview__card">
-          <div className="preview__card--name">
-            <div className="line-palette js__line-palette"></div>
-            <h3 className="preview__card--name name">
-              {props.data.name || 'Vilma picatecla'}
-            </h3>
-            <h4 className=" preview__card--name profession">
-              {props.data.job || 'Front end'}
-            </h4>
-          </div>
+          <TitlePreview
+            name={props.data.name}
+            job={props.data.job}
+            number={props.data.palette}
+          />
           <ImagePreview avatar={props.avatar} />
           <div className="preview__card--icons">
             <Icon
               href={`tel:${props.data.phone}` || ''}
               className={'linkPhone'}
               icon={'fas fa-mobile-alt'}
+              number={props.data.palette}
             />
             <Icon
               href={
@@ -35,6 +33,7 @@ const Preview = (props) => {
               }
               className={'js-email'}
               icon={'far fa-envelope'}
+              number={props.data.palette}
             />
             <Icon
               href={
@@ -43,6 +42,7 @@ const Preview = (props) => {
               }
               className={'linkedin-js'}
               icon={'fab fa-linkedin-in'}
+              number={props.data.palette}
             />
             <Icon
               href={
@@ -51,6 +51,7 @@ const Preview = (props) => {
               }
               className={'github-js'}
               icon={'fab fa-github-alt'}
+              number={props.data.palette}
             />
           </div>
         </div>
