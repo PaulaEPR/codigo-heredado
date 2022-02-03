@@ -15,19 +15,28 @@ server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
+const staticServerPath="./src/public-react";
+server.use(express.static((staticServerPath)));
+
 // Escribimos los endpoints que queramos
 server.post("/card", (req, res) => {
   const responseSuccess = {
     "sucess": true,
-    "cardURL": "http://localhost:4000/card/"
+    "cardURL": "https://awesome-profile-cards.herokuapp.com/card"
   }
 
   const responseError = {
     "sucess": false,
     "error": "Error description"
   }
+  if(req.body.name !== '' && req.body.job !== ''){
+    res.json(responseSuccess);
+  }
+  else{
+    res.json(responseError)
+  }
 
-  res.json(responseSuccess);
+  //res.json(responseSuccess);
 });
 
 server.get("/card/92392982298732823", (req, res) => {

@@ -6,8 +6,8 @@ const ShareButton = (props) => {
           type="submit"
           href="#"
           id="button-card"
-          className="unabled share-button"
-          disabled
+          className=" share-button"
+         onClick={props.handleClickBtn}
         >
           <i className="far fa-address-card"></i>
           <span>Crear tarjeta</span>

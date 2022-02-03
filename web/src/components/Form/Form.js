@@ -109,7 +109,7 @@ const Form = (props) => {
             required={true}
           />
 
-          <InputFile avatar={props.avatar} updateAvatar={props.updateAvatar} />
+          <InputFile avatar={props.avatar} updateAvatar={props.updateAvatar} handleInput={props.handleInput} />
 
           <InputString
             handleInput={props.handleInput}
@@ -160,7 +160,7 @@ const Form = (props) => {
           <h2 className="form__share--title">Comparte</h2>
           <i className="fas fa-chevron-up js-arrow js-arrow-down"></i>
         </div>
-        {/* <ShareButton dataAPI={props.dataAPI}/> */}
+         <ShareButton dataAPI={props.dataAPI} handleClickBtn={props.handleClickBtn}/> 
       </fieldset>
     </form>
   );

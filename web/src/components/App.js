@@ -32,6 +32,7 @@ function App() {
       name: '',
       job: '',
       email: '',
+      photo: '',
       phone: '',
       github: '',
       linkedin: '',
@@ -40,34 +41,19 @@ function App() {
   };
 
   /* FETCH */
-/*   const [dataAPI, setDataAPI] = useState({});
-
-  useEffect(() => {
-    callToApi().then((response) => {
+  const [dataAPI, setDataAPI] = useState('');
+ 
+  
+  
+  const handleClickBtn=(event)=>{
+    event.preventDefault();
+      callToApi(data).then((response) => {
       setDataAPI(response);
-      console.log("Hola")
+      
     });
-  }, []); */
-
-  //PALETAS
-
-  /*   const [firstPalette, setFirstPalette] = useState('');
-
-  const handleFirstPalette = (event) => {
-    //event.target.value;
-    if (event.currentTarget.value === '1') {
-      setFirstPalette = 'preview__card--name';
-    }
-  };
-
-  const [secondPalette, setSecondPalette] = useState('');
-
-  const handleSecondPalette = (event) => {
-    //event.target.value;
-    if (event.currentTarget === '2') {
-      setSecondPalette = 'preview__card--name .color2';
-    }
-  }; */
+    console.log(dataAPI)
+  }
+  
 
   const handleInput = (inputName, inputValue) => {
     const inputChanged = inputName;
@@ -88,7 +74,8 @@ function App() {
           handleInput={handleInput}
           avatar={avatar}
           updateAvatar={updateAvatar}
-          //dataAPI={dataAPI}
+          dataAPI={dataAPI}
+          handleClickBtn={handleClickBtn}
         />
       </main>
       <Footer />
