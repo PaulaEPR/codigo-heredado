@@ -12,6 +12,7 @@ function App() {
     name: '',
     job: '',
     email: '',
+    photo:'',
     phone: '',
     github: '',
     linkedin: '',
@@ -24,6 +25,10 @@ function App() {
   const [avatar, setAvatar] = useState('');
   const updateAvatar = (avatar) => {
     setAvatar(avatar);
+    setData({
+      ...data,
+      ['photo']: avatar,
+    });
   };
 
   //BUTON RESET

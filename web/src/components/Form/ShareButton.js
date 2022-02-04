@@ -19,7 +19,9 @@ const ShareButton = (props) => {
           href={props.dataAPI.cardURL}
           className="card-link"
           target="_blank"
-        ></a>
+          
+        >{props.dataAPI.cardURL}</a>
+
         <a href="#" className="twitter" target="_blank">
           <i className="fab fa-twitter"></i>
           Compartir en twitter
