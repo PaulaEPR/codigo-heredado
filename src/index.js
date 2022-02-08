@@ -14,7 +14,7 @@ server.use(express.json({
 server.set('view engine', 'ejs');
 
 // Arrancamos el servidor en el puerto 4000
-const serverPort = 4000;
+const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
@@ -32,7 +32,7 @@ server.post('/card', (req, res) => {
     console.log(savedCards);
     const responseSuccess = {
       sucess: true,
-      cardURL: `http://localhost:4000/card/${newCardData.id}`,
+      cardURL: `https://awesome-cards-picateclas.herokuapp.com/card/${newCardData.id}`,
     };
     res.json(responseSuccess);
   } else {
