@@ -8,7 +8,9 @@ const server = express();
 
 // Configuramos el servidor
 server.use(cors());
-server.use(express.json());
+server.use(express.json({
+  limit:'100mb'
+}));
 server.set('view engine', 'ejs');
 
 // Arrancamos el servidor en el puerto 4000
@@ -50,3 +52,6 @@ server.get('/card/:id', (req, res) => {
 
 const staticServerPath = './src/public-react';
 server.use(express.static(staticServerPath));
+
+const staticServerCss = './src/public-css';
+server.use(express.static(staticServerCss));

@@ -1,41 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/card.css">
     <title>Document</title>
   </head>
   <body>
     <section class="preview">
-      <button class="preview__button" type="reset">
-        <span><i class="far fa-trash-alt"></i></span>Reset
-      </button>
       <div class="preview__background">
         <div class="preview__card">
           <div class="preview__card--name">
             <div class="line-palette js__line-palette background-color1"></div>
             <h3 class="preview__card--name name color1-dark">
-              Vilma picatecla
+              <%=name%>
             </h3>
-            <h4 class="preview__card--name profession color1">Front end</h4>
+            <h4 class="preview__card--name profession color1"><%=job%></h4>
           </div>
           <div
             class="preview__card--img js__profile-image"
             style="
-              background-image: url('/static/media/Vilma.4687a23c687bab70cb1a.jpg');
+              background-image: url('<%=photo%>');
             "
           ></div>
           <div class="preview__card--icons">
             <div class="card-icons js-iconBorder color1-icon-border">
-              <a class="linkPhone" href="tel:" target="_blank" rel="noreferrer"
+              <a class="linkPhone" href="tel:<%=phone%>" target="_blank" rel="noreferrer"
                 ><i class="fas fa-mobile-alt js-icon color1-icon"></i
               ></a>
             </div>
             <div class="card-icons js-iconBorder color1-icon-border">
               <a
                 class="js-email"
-                href="mailto:"
+                href="mailto:<%=email%>"
                 target="_blank"
                 rel="noreferrer"
                 ><i class="far fa-envelope js-icon color1-icon"></i
@@ -44,7 +47,7 @@
             <div class="card-icons js-iconBorder color1-icon-border">
               <a
                 class="linkedin-js"
-                href="https://www.linkedin.com/in/"
+                href="https://www.linkedin.com/in/<%=linkedin%>"
                 target="_blank"
                 rel="noreferrer"
                 ><i class="fab fa-linkedin-in js-icon color1-icon"></i
@@ -53,7 +56,7 @@
             <div class="card-icons js-iconBorder color1-icon-border">
               <a
                 class="github-js"
-                href="https://www.github.com/"
+                href="https://www.github.com/<%=github%>"
                 target="_blank"
                 rel="noreferrer"
                 ><i class="fab fa-github-alt js-icon color1-icon"></i
