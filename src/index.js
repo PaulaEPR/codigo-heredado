@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const { v4: uuidv4 } = require('uuid');
+const Database = require('better-sqlite3')
 
 // Creamos el servidor
 const server = express();
@@ -12,6 +13,9 @@ server.use(express.json({
   limit:'100mb'
 }));
 server.set('view engine', 'ejs');
+
+// Coniguramos la base de datos
+const db = new Database('.src/data/cards.db', {verbose: console.log})
 
 // Arrancamos el servidor en el puerto 4000
 const serverPort = process.env.PORT || 4000;
