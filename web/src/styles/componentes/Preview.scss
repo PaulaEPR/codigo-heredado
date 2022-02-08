@@ -140,10 +140,17 @@
 
 
 // Segunda paleta
-.preview__card--name .color2 {
+/* .preview__card--name .color2 {
   color: #bd1010;
 }
 
+.preview__card--name .color2-light {
+  color: #e95626;
+} */
+
+.preview__card--name .color2 {
+  color: #e95626;
+}
 .preview__card--name .color2-dark {
   color: #420101;
 }
@@ -152,9 +159,6 @@
   background-color: #bd1010;
 }
 
-.preview__card--name .color2-light {
-  color: #e95626;
-}
 
 .preview__card .card-icons .color2-icon {
   color: #420101;

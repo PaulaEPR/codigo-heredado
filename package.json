@@ -1,0 +1,28 @@
+{
+  "name": "project-promo-o-module-4-team-7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "publish-react": "cd web && npm run build && cd .. && rm -rf ./src/public-react && mv ./web/build ./src/public-react"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adalab/project-promo-o-module-4-team-7.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adalab/project-promo-o-module-4-team-7/issues"
+  },
+  "homepage": "https://github.com/Adalab/project-promo-o-module-4-team-7#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "uuid": "^8.3.2"
+  }
+}
