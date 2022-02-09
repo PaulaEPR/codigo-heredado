@@ -51,9 +51,12 @@ server.post('/card', (req, res) => {
       newCardData.palette
     );
     console.log(insertNewCard)
+    const localserver= 'http://localhost:4000'
+    const herokuApi = 'https://awesome-cards-picateclas.herokuapp.com'
+
     const responseSuccess = {
       sucess: true,
-      cardURL: `https://awesome-cards-picateclas.herokuapp.com/card/${newCardData.id}`,
+      cardURL: `${localserver}/card/${newCardData.id}`,
     };
     res.json(responseSuccess);
   } else {
