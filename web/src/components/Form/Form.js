@@ -12,8 +12,12 @@ const Form = (props) => {
   const handleCollapsedDesign = () => {
     if (collapsedDesign === '') {
       setCollapsedDesign('collapsed');
+      setCollapsedFill('')
+      setCollapsedShare('')
     } else {
       setCollapsedDesign('');
+      setCollapsedFill('collapsed')
+      setCollapsedShare('collapsed')
     }
   };
 
@@ -22,8 +26,12 @@ const Form = (props) => {
   const handleCollapsedFill = () => {
     if (collapsedFill === '') {
       setCollapsedFill('collapsed');
+      setCollapsedDesign('')
+      setCollapsedShare('')
     } else {
       setCollapsedFill('');
+      setCollapsedDesign('collapsed');
+      setCollapsedShare('collapsed')
     }
   };
 
@@ -32,8 +40,13 @@ const Form = (props) => {
   const handleCollapsedShare = () => {
     if (collapsedShare === '') {
       setCollapsedShare('collapsed');
+      setCollapsedDesign('');
+      setCollapsedFill('')
     } else {
       setCollapsedShare('');
+      setCollapsedFill('collapsed');
+      setCollapsedDesign('collapsed');
+
     }
   };
 
