@@ -25,11 +25,17 @@ server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
-//const savedCards = [];
-
 // Escribimos los endpoints que queramos
 server.post('/card', (req, res) => {
-  if (req.body.name !== '' && req.body.job !== '') {
+  if (
+    req.body.name !== '' &&
+    req.body.job !== '' &&
+    req.body.photo !== '' &&
+    req.body.email !== '' &&
+    req.body.linkedin !== '' &&
+    req.body.github !== '' &&
+    req.body.palette !== ''
+  ) {
     const newCardData = {
       ...req.body,
       id: uuidv4(),
@@ -69,7 +75,7 @@ server.post('/card', (req, res) => {
 });
 
 server.get('/card/:id', (req, res) => {
-  console.log(req.params.id)
+  console.log(req.params.id);
   const queryCard = db.prepare('SELECT * FROM cards WHERE uuid = ?');
   const userCard = queryCard.get(req.params.id);
   res.render('pages/card', userCard);

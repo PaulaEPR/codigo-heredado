@@ -1,7 +1,7 @@
 const ShareButton = (props) => {
   return (
     <>
-      <div className="form__share--created" id="share-card">
+    {props.dataAPI.cardURL ? <div className="form__share--created" id="share-card">
         <h4>La tarjeta ha sido creada:</h4>
         <a href={props.dataAPI.cardURL} className="card-link" target="_blank">
           {props.dataAPI.cardURL}
@@ -15,7 +15,9 @@ const ShareButton = (props) => {
           <i className="fab fa-twitter"></i>
           Compartir en twitter
         </a>
-      </div>
+      </div> 
+      : <p className="form__share--created">Por favor, rellena los campos obligatorios *</p>}
+      
     </>
   );
 };
