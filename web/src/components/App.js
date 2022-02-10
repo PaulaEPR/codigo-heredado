@@ -43,6 +43,7 @@ function App() {
       linkedin: '',
       palette: '1',
     });
+    setAvatar('')
   };
 
   /* FETCH */
