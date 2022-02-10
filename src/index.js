@@ -34,11 +34,11 @@ server.post('/card', (req, res) => {
       ...req.body,
       id: uuidv4(),
     };
-    console.log('hola')
+
     const insertNewCard = db.prepare(
       'INSERT INTO cards (uuid, name, job, photo, phone, email, linkedin, github, palette) VALUES (?,?,?,?,?,?,?,?,?)'
     );
-     
+
     insertNewCard.run(
       newCardData.id,
       newCardData.name,
@@ -50,13 +50,13 @@ server.post('/card', (req, res) => {
       newCardData.github,
       newCardData.palette
     );
-    console.log(insertNewCard)
-    const localserver= 'http://localhost:4000'
-    const herokuApi = 'https://awesome-cards-picateclas.herokuapp.com'
+    console.log(insertNewCard);
+    const localserver = 'http://localhost:4000';
+    const herokuApi = 'https://awesome-cards-picateclas.herokuapp.com';
 
     const responseSuccess = {
       sucess: true,
-      cardURL: `${localserver}/card/${newCardData.id}`,
+      cardURL: `${herokuApi}/card/${newCardData.id}`,
     };
     res.json(responseSuccess);
   } else {
@@ -71,9 +71,10 @@ server.post('/card', (req, res) => {
 server.get('/card/:id', (req, res) => {
   //console.log(req.params.id);
   const queryCard = db.prepare('SELECT * FROM cards WHERE uuid = ?');
-  const userCard = queryCard.run(req.params.id);
+  const userCard = queryCard.get(req.params.id);
   //const userCard = savedCards.find((card) => card.id === req.params.id);
   res.render('pages/card', userCard);
+  console.log(userCard);
 });
 
 const staticServerPath = './src/public-react';

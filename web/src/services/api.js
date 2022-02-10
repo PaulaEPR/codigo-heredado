@@ -1,17 +1,18 @@
 const localserver= 'http://localhost:4000'
-const herokuApi = '"https://awesome-cards-picateclas.herokuapp.com'
+const herokuApi = 'https://awesome-cards-picateclas.herokuapp.com'
 
 const callToApi = (data) => {
   console.log(data);
-  return fetch(`${localserver}/card`, {
+  return fetch(`${herokuApi}/card`, {
     method: "POST",
     body: JSON.stringify(data),
     headers: { "Content-Type": "application/json" },
   })
     .then((response) => response.json())
-    .then((data) => {
+    .then((data)=>{
       return data;
-    });
+    })
+    
 };
 
 export default callToApi;
