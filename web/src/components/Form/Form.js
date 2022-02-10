@@ -12,12 +12,12 @@ const Form = (props) => {
   const handleCollapsedDesign = () => {
     if (collapsedDesign === '') {
       setCollapsedDesign('collapsed');
-      setCollapsedFill('')
-      setCollapsedShare('')
+      setCollapsedFill('');
+      setCollapsedShare('');
     } else {
       setCollapsedDesign('');
-      setCollapsedFill('collapsed')
-      setCollapsedShare('collapsed')
+      setCollapsedFill('collapsed');
+      setCollapsedShare('collapsed');
     }
   };
 
@@ -26,12 +26,12 @@ const Form = (props) => {
   const handleCollapsedFill = () => {
     if (collapsedFill === '') {
       setCollapsedFill('collapsed');
-      setCollapsedDesign('')
-      setCollapsedShare('')
+      setCollapsedDesign('');
+      setCollapsedShare('');
     } else {
       setCollapsedFill('');
       setCollapsedDesign('collapsed');
-      setCollapsedShare('collapsed')
+      setCollapsedShare('collapsed');
     }
   };
 
@@ -41,12 +41,11 @@ const Form = (props) => {
     if (collapsedShare === '') {
       setCollapsedShare('collapsed');
       setCollapsedDesign('');
-      setCollapsedFill('')
+      setCollapsedFill('');
     } else {
       setCollapsedShare('');
       setCollapsedFill('collapsed');
       setCollapsedDesign('collapsed');
-
     }
   };
 
@@ -124,7 +123,11 @@ const Form = (props) => {
             required={true}
           />
 
-          <InputFile avatar={props.avatar} updateAvatar={props.updateAvatar} handleInput={props.handleInput} />
+          <InputFile
+            avatar={props.avatar}
+            updateAvatar={props.updateAvatar}
+            handleInput={props.handleInput}
+          />
 
           <InputString
             handleInput={props.handleInput}
@@ -176,19 +179,25 @@ const Form = (props) => {
           <i className="fas fa-chevron-up js-arrow js-arrow-down"></i>
         </div>
         <div className="form__share--button form-container-js">
-        <button
-          type="submit"
-          href="#"
-          id="button-card"
-          className=" share-button"
-          onClick={props.handleClickBtn}
-        >
-          <i className="far fa-address-card"></i>
-          <span>Crear tarjeta</span>
-        </button>
-      </div>
-        {props.dataAPI !== '' ? <ShareButton dataAPI={props.dataAPI} handleClickBtn={props.handleClickBtn}/> :  ''}
-         
+          <button
+            type="submit"
+            href="#"
+            id="button-card"
+            className=" share-button"
+            onClick={props.handleClickBtn}
+          >
+            <i className="far fa-address-card"></i>
+            <span>Crear tarjeta</span>
+          </button>
+        </div>
+        {props.dataAPI !== '' ? (
+          <ShareButton
+            dataAPI={props.dataAPI}
+            handleClickBtn={props.handleClickBtn}
+          />
+        ) : (
+          ''
+        )}
       </fieldset>
     </form>
   );

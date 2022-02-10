@@ -69,10 +69,9 @@ server.post('/card', (req, res) => {
 });
 
 server.get('/card/:id', (req, res) => {
-  //console.log(req.params.id);
+  console.log(req.params.id)
   const queryCard = db.prepare('SELECT * FROM cards WHERE uuid = ?');
   const userCard = queryCard.get(req.params.id);
-  //const userCard = savedCards.find((card) => card.id === req.params.id);
   res.render('pages/card', userCard);
   console.log(userCard);
 });
