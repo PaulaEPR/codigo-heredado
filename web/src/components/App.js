@@ -6,6 +6,8 @@ import Footer from './Footer';
 import Form from './Form/Form';
 import Preview from './Preview/Preview';
 import callToApi from '../services/api';
+import { Route, Switch } from 'react-router-dom';
+import Home from './Home';
 
 function App() {
   const [data, setData] = useState({
@@ -65,19 +67,26 @@ function App() {
 
   return (
     <div>
-      <Header />
-      <main className="preview-main">
-        <Preview data={data} resetBtn={resetBtn} avatar={avatar} />
-        <Form
-          data={data}
-          handleInput={handleInput}
-          avatar={avatar}
-          updateAvatar={updateAvatar}
-          dataAPI={dataAPI}
-          handleClickBtn={handleClickBtn}
-        />
-      </main>
-      <Footer />
+      <Switch>
+        <Route path="/" exact>
+         <Home />
+        </Route>
+        <Route path="/card">
+          <Header />
+          <main className="preview-main">
+            <Preview data={data} resetBtn={resetBtn} avatar={avatar} />
+            <Form
+              data={data}
+              handleInput={handleInput}
+              avatar={avatar}
+              updateAvatar={updateAvatar}
+              dataAPI={dataAPI}
+              handleClickBtn={handleClickBtn}
+            />
+          </main>
+          <Footer />
+        </Route>
+      </Switch>
     </div>
   );
 }

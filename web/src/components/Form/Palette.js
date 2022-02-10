@@ -16,7 +16,7 @@ const Palette = (props) => {
         name="palette"
         data-id={props.number}
         value={props.number}
-        onClick={handleClickRadio}
+        onChange={handleClickRadio}
         checked={props.checked}
       />
       <div className="colorOne"></div>
