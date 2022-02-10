@@ -175,7 +175,20 @@ const Form = (props) => {
           <h2 className="form__share--title">Comparte</h2>
           <i className="fas fa-chevron-up js-arrow js-arrow-down"></i>
         </div>
-         <ShareButton dataAPI={props.dataAPI} handleClickBtn={props.handleClickBtn}/> 
+        <div className="form__share--button form-container-js">
+        <button
+          type="submit"
+          href="#"
+          id="button-card"
+          className=" share-button"
+          onClick={props.handleClickBtn}
+        >
+          <i className="far fa-address-card"></i>
+          <span>Crear tarjeta</span>
+        </button>
+      </div>
+        {props.dataAPI !== '' ? <ShareButton dataAPI={props.dataAPI} handleClickBtn={props.handleClickBtn}/> :  ''}
+         
       </fieldset>
     </form>
   );
