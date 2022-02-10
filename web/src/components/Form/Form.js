@@ -75,19 +75,21 @@ const Form = (props) => {
               data={props.data}
               number={'1'}
               className={'first__color'}
-              //checked={props.checked}
+              checked={props.data.palette === '1' ? true : false}
             />
             <Palette
               handleInput={props.handleInput}
               data={props.data}
               number={'2'}
               className={'second__color'}
+              checked={props.data.palette === '2' ? true : false}
             />
             <Palette
               handleInput={props.handleInput}
               data={props.data}
               number={'3'}
               className={'third__color'}
+              checked={props.data.palette === '3' ? true : false}
             />
           </ul>
         </div>

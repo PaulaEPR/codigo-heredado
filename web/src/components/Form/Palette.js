@@ -1,7 +1,10 @@
 const Palette = (props) => {
   const handleClickRadio = (ev) => {
-    
-    props.handleInput(ev.currentTarget.name, ev.currentTarget.value);
+    props.handleInput(
+      ev.currentTarget.name,
+      ev.currentTarget.value,
+      ev.currentTarget.checked
+    );
   };
 
   return (
@@ -14,7 +17,7 @@ const Palette = (props) => {
         data-id={props.number}
         value={props.number}
         onClick={handleClickRadio}
-        /* checked={`${props.data.palette} === ${props.number}`} */
+        checked={props.checked}
       />
       <div className="colorOne"></div>
       <div className="colorTwo"></div>

@@ -12,14 +12,12 @@ function App() {
     name: '',
     job: '',
     email: '',
-    photo:'',
+    photo: '',
     phone: '',
     github: '',
     linkedin: '',
     palette: '1',
   });
-
-
 
   //INPUT FILE
   const [avatar, setAvatar] = useState('');
@@ -47,18 +45,14 @@ function App() {
 
   /* FETCH */
   const [dataAPI, setDataAPI] = useState('');
- 
-  
-  
-  const handleClickBtn=(event)=>{
+
+  const handleClickBtn = (event) => {
     event.preventDefault();
-      callToApi(data).then((response) => {
+    callToApi(data).then((response) => {
       setDataAPI(response);
-      
     });
-    console.log(dataAPI)
-  }
-  
+    console.log(dataAPI);
+  };
 
   const handleInput = (inputName, inputValue) => {
     const inputChanged = inputName;
