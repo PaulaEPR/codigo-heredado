@@ -1,8 +1,7 @@
 
 ![Logo](./web/src/images/logo-awesome-profile-cards.svg)
 
-# Awesome profile cards - Proyecto Módulos 3 y 4
-### Legacy Code: Awesome profile cards - Proyecto módulo 2
+# Legacy Code - Profile cards
 
 ¡Hola! Este es nuestro proyecto final para los módulos 3 y 4 del bootcamp de **programación full-stack** de Adalab en el que hemos puesto en práctica los conocimientos adquiridos durante el tercer y cuarto módulo, centrados en **React** y **Back-end**.
 
@@ -10,13 +9,45 @@ Siguiendo la filosofía **Agile** hemos trabajado en equipo, construyendo una we
 
 Partiendo de un **proyecto heredado** que había sido desarollado en JavaScript, refactorizamos el código y lo adaptamos a **React**. También, realizamos la comunicación con el servidor con **NodeJS** y la base de datos está montada en **SQLite**. Para poder hacer peticiones a la base de datos utilizamos **Better SQLite** y para el servidor de ficheros dinámicos el **motor de plantillas de EJS**.
 
-
-
-### ¿Dónde verlo?
+## ¿Dónde verlo?
 
 [Heroku](https://awesome-cards-picateclas.herokuapp.com/)
 
-### Equipo de desarollo
+## Instalación y configuración
+
+**Requerimientos:**
+
+- Necesitas tener `node` y `npm` instalados.
+
+**Clonar el repositorio**
+
+```
+git clone URL
+```
+
+**Instalar las dependencias**
+
+```
+npm install
+```
+
+**Ejecutar la aplicación**
+
+```
+npm start
+```
+
+- Ve a [http://localhost:3000](http://localhost:3000) para ver la app en el navegador.
+
+**Desplegar el entorno de producción**
+
+```
+npm run publish-react
+```
+
+## React: Proyecto en equipo
+
+### Equipo de desarrollo
 
 
 [![Autor](https://img.shields.io/badge/github-Elena%20Fernández-brightgreen?style=for-the-badge&logo=github)](https://github.com/ElenaFernandez)
